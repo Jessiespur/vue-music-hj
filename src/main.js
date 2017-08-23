@@ -5,6 +5,9 @@ import router from './router'
 import fastclick from 'fastclick'
 import VueLazyLoad from 'vue-lazyload'
 
+import Axios from 'axios'
+import VueAxios from 'vue-axios'
+
 import 'common/stylus/index.styl'
 
 fastclick.attach(document.body)
@@ -12,6 +15,8 @@ fastclick.attach(document.body)
 Vue.use(VueLazyLoad, {
   loading: require('common/image/default.png')
 })
+
+Vue.use(VueAxios, Axios)
 
 Vue.config.productionTip = false
 

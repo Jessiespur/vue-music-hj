@@ -13,7 +13,7 @@
         </div>
         <div class="recommend-list">
           <h1 class="list-title">热门歌单推荐</h1>
-          <ul>
+          <ul v-if="discList.length">
             <li v-for="item in discList" class="item">
               <div class="icon">
                 <img width="60" height="60" v-lazy="item.imgurl">
@@ -24,6 +24,9 @@
               </div>
             </li>
           </ul>
+          <div v-else>
+            <loading></loading>
+          </div>
         </div>
       </div>
     </scroll>
@@ -35,6 +38,7 @@
   import {getRecommend, getDiscList} from 'api/recommend'
   import {ERR_OK} from 'api/config'
   import Scroll from 'base/scroll/scroll'
+  import Loading from 'base/loading/loading'
 
   export default {
     data() {
@@ -45,10 +49,12 @@
     },
     created() {
       this._getRecommend()
-      this._getDiscList()
+      setTimeout(() => {
+        this._getDiscList()
+      }, 1000)
     },
     components: {
-      Slider, Scroll
+      Slider, Scroll, Loading
     },
     methods: {
       _getRecommend() {

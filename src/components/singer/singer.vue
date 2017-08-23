@@ -1,9 +1,11 @@
 <template>
-    <div class="container">歌手页面singer</div>
+  <div>歌手页面singer
+    <div class="radio"></div>
+  </div>
 </template>
 
 <script>
-    export default {}
+  export default {}
 </script>
 
 <style>

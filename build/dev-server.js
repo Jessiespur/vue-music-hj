@@ -38,6 +38,7 @@ apiRouters.get('/getDiscList', function (req, res) {
     console.log(e)
   })
 })
+
 app.use('/api', apiRouters)
 
 var compiler = webpack(webpackConfig)

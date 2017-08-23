@@ -7,7 +7,9 @@ export const commonParams = {
 }
 
 export const options = {
-  param: 'jsonpCallback'
+  name: 'hejuanCallback',
+  param: 'jsonpCallback',
+  timeout: 5000
 }
 
 export const ERR_OK = 0
